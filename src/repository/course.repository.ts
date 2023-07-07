@@ -28,4 +28,13 @@ async function getCourseByIdDB(id: iCourse[]) {
   return data;
 }
 
-export { getUsersDB, createCourseDB, getCourseByIdDB };
+async function updateCourseDB(id: iCourse[], course: iCourse[]) {
+  const client = await pool.connect();
+
+  const sql = "update courses set course = $1 where id = $2 returning *";
+  const data = (await client.query(sql, [course, id])).rows;
+
+  return data;
+}
+
+export { getUsersDB, createCourseDB, getCourseByIdDB, updateCourseDB };

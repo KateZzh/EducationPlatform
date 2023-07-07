@@ -2,6 +2,7 @@ import {
   getUsersDB,
   createCourseDB,
   getCourseByIdDB,
+  updateCourseDB,
 } from "../repository/course.repository";
 import iCourse from "../interfaces";
 
@@ -26,4 +27,11 @@ async function getCourseById(id: iCourse[]) {
   return data;
 }
 
-export { getUsers, createCourse, getCourseById };
+async function updateCourse(id: iCourse[], course: iCourse[]) {
+  const data = await updateCourseDB(id, course);
+  if (!data.length) throw new Error("course doesn't update");
+
+  return data;
+}
+
+export { getUsers, createCourse, getCourseById, updateCourse };

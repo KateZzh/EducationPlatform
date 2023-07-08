@@ -37,4 +37,19 @@ async function updateCourseDB(id: iCourse[], course: iCourse[]) {
   return data;
 }
 
-export { getUsersDB, createCourseDB, getCourseByIdDB, updateCourseDB };
+async function deleteCourseDB(id: iCourse[]) {
+  const client = await pool.connect();
+
+  const sql = "delete from courses where id = $1 returning *";
+  const data = (await client.query(sql, [id])).rows;
+
+  return data;
+}
+
+export {
+  getUsersDB,
+  createCourseDB,
+  getCourseByIdDB,
+  updateCourseDB,
+  deleteCourseDB,
+};

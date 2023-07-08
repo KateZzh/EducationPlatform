@@ -4,6 +4,7 @@ import {
   createCourse,
   getCourseById,
   updateCourse,
+  deleteCourse,
 } from "../service/course.service";
 import iCourse from "../interfaces";
 
@@ -46,6 +47,17 @@ route.put("/:id", async (req: Request, res: Response): Promise<void> => {
     const { id } = req.params;
     const { course } = req.body;
     const data: iCourse[] = await updateCourse(id, course);
+
+    res.status(200).send(data);
+  } catch (error: any) {
+    res.status(404).send(error.message);
+  }
+});
+
+route.delete("/:id", async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const data: iCourse[] = await deleteCourse(id);
 
     res.status(200).send(data);
   } catch (error: any) {

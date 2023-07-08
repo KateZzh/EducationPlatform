@@ -3,6 +3,7 @@ import {
   createCourseDB,
   getCourseByIdDB,
   updateCourseDB,
+  deleteCourseDB,
 } from "../repository/course.repository";
 import iCourse from "../interfaces";
 
@@ -34,4 +35,11 @@ async function updateCourse(id: iCourse[], course: iCourse[]) {
   return data;
 }
 
-export { getUsers, createCourse, getCourseById, updateCourse };
+async function deleteCourse(id: iCourse[]) {
+  const data = await deleteCourseDB(id);
+  if (!data.length) throw new Error("course doesn't delete");
+
+  return data;
+}
+
+export { getUsers, createCourse, getCourseById, updateCourse, deleteCourse };

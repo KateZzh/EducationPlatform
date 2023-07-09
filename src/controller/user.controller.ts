@@ -1,11 +1,11 @@
 import express, { Request, Response } from "express";
-import { getUsers, createCourse, getCourseById, updateCourse, deleteCourse } from "../service/course.service";
+import { getAllUsers, getUserById, updateUser, deleteUser } from "../service/user.service";
 
 const route = express.Router();
 
 route.get("/", async (req: Request, res: Response): Promise<void> => {
   try {
-    const data = await getUsers();
+    const data = await getAllUsers();
 
     res.status(200).send(data);
   } catch (error: any) {
@@ -13,21 +13,10 @@ route.get("/", async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-route.post("/", async (req: Request, res: Response): Promise<void> => {
-  try {
-    const { course } = req.body;
-    const data = await createCourse(course);
-
-    res.status(201).send(data);
-  } catch (error: any) {
-    res.status(405).send(error.message);
-  }
-});
-
 route.get("/:id", async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    const data = await getCourseById(id);
+    const data = await getUserById(id);
 
     res.status(200).send(data);
   } catch (error: any) {
@@ -38,8 +27,8 @@ route.get("/:id", async (req: Request, res: Response): Promise<void> => {
 route.put("/:id", async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    const { course } = req.body;
-    const data = await updateCourse(id, course);
+    const { name, surname, email, pwd } = req.body;
+    const data = await updateUser(id, name, surname, email, pwd);
 
     res.status(200).send(data);
   } catch (error: any) {
@@ -47,10 +36,10 @@ route.put("/:id", async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-route.delete("/:id", async (req: Request, res: Response) => {
+route.delete("/:id", async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    const data = await deleteCourse(id);
+    const data = await deleteUser(id);
 
     res.status(200).send(data);
   } catch (error: any) {

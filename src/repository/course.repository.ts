@@ -1,5 +1,5 @@
 import { pool } from "../db";
-import iCourse from "../interfaces";
+import { iCourse } from "../interfaces";
 
 async function getUsersDB(): Promise<iCourse[]> {
   const client = await pool.connect();
@@ -10,7 +10,7 @@ async function getUsersDB(): Promise<iCourse[]> {
   return data;
 }
 
-async function createCourseDB(course: iCourse[]) {
+async function createCourseDB(course: string): Promise<iCourse[]> {
   const client = await pool.connect();
 
   const sql = "insert into courses (course) values ($1) returning *";
@@ -19,7 +19,7 @@ async function createCourseDB(course: iCourse[]) {
   return data;
 }
 
-async function getCourseByIdDB(id: iCourse[]) {
+async function getCourseByIdDB(id: number): Promise<iCourse[]> {
   const client = await pool.connect();
 
   const sql = "select * from courses where id = $1";
@@ -28,7 +28,7 @@ async function getCourseByIdDB(id: iCourse[]) {
   return data;
 }
 
-async function updateCourseDB(id: iCourse[], course: iCourse[]) {
+async function updateCourseDB(id: number, course: string): Promise<iCourse[]> {
   const client = await pool.connect();
 
   const sql = "update courses set course = $1 where id = $2 returning *";
@@ -37,7 +37,7 @@ async function updateCourseDB(id: iCourse[], course: iCourse[]) {
   return data;
 }
 
-async function deleteCourseDB(id: iCourse[]) {
+async function deleteCourseDB(id: number) {
   const client = await pool.connect();
 
   const sql = "delete from courses where id = $1 returning *";
@@ -46,10 +46,4 @@ async function deleteCourseDB(id: iCourse[]) {
   return data;
 }
 
-export {
-  getUsersDB,
-  createCourseDB,
-  getCourseByIdDB,
-  updateCourseDB,
-  deleteCourseDB,
-};
+export { getUsersDB, createCourseDB, getCourseByIdDB, updateCourseDB, deleteCourseDB };

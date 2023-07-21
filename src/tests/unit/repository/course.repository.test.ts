@@ -1,3 +1,4 @@
+import { connect } from "http2";
 import {
   getUsersDB,
   createCourseDB,
@@ -5,20 +6,6 @@ import {
   updateCourseDB,
   deleteCourseDB,
 } from "../../../repository/course.repository";
-
-// jest.mock("pg", function () {
-//   return {
-//     Pool: jest.fn(function () {
-//       return {
-//         connect: jest.fn(function () {
-//           return {
-//             query: jest.fn(),
-//           };
-//         }),
-//       };
-//     }),
-//   };
-// });
 
 // const mClient = {
 //   query: jest.fn(),
@@ -29,24 +16,6 @@ import {
 //     connect: jest.fn(() => mClient),
 //   };
 //   return { Pool: jest.fn(() => pool) };
-// });
-
-// describe("", () => {
-//   test("", async () => {
-//     mClient.query.mockResolvedValue({
-//       rows: [
-//         { id: 1, course: "js" },
-//         { id: 2, course: "ts" },
-//       ],
-//     });
-
-//     const res = await getUsersDB();
-
-//     expect(res).toEqual([
-//       { id: 1, course: "js" },
-//       { id: 2, course: "ts" },
-//     ]);
-//   });
 // });
 
 const mClient = { query: jest.fn() };
@@ -63,7 +32,7 @@ jest.mock("pg", function () {
   };
 });
 
-describe("getUsersDB", () => {
+describe("getUsersDB:", () => {
   test("", async () => {
     mClient.query.mockResolvedValue({
       rows: [
@@ -78,6 +47,7 @@ describe("getUsersDB", () => {
       { id: 1, course: "js" },
       { id: 2, course: "ts" },
     ]);
+    expect(res).toHaveLength(2);
   });
 });
 
@@ -91,12 +61,32 @@ describe("getCourseByIdDB:", () => {
   });
 });
 
-describe("createCourseDB", () => {
+describe("createCourseDB:", () => {
   test("", async () => {
     mClient.query.mockResolvedValue({ rows: [{ id: 1, course: "js" }] });
 
     const res = await createCourseDB("js");
 
     expect(res).toEqual([{ id: 1, course: "js" }]);
+  });
+});
+
+describe("updateCourseDB:", () => {
+  test("", async () => {
+    mClient.query.mockResolvedValue({ rows: [{ id: 2, course: "java" }] });
+
+    const res = await updateCourseDB(2, "java");
+
+    expect(res).toEqual([{ id: 2, course: "java" }]);
+  });
+});
+
+describe("deleteCourseDB:", () => {
+  test("", async () => {
+    mClient.query.mockResolvedValue({ rows: [{ id: 2, course: "java" }] });
+
+    const res = await deleteCourseDB(2);
+
+    expect(res).toEqual([{ id: 2, course: "java" }]);
   });
 });

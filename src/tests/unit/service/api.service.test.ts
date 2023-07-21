@@ -37,26 +37,53 @@ describe("createUser:", () => {
     ]);
   });
 
-  test("", async () => {
+  test("error getEmail:", async () => {
     const mockgetEmail = jest.spyOn(repository, "getEmailDB");
 
-    mockgetEmail.mockResolvedValue([]);
+    mockgetEmail.mockResolvedValue([
+      {
+        id: 2,
+        name: "Jerry",
+        surname: "Jem",
+        email: "jerry@gmail.com",
+        pwd: "123",
+      },
+    ]);
 
     try {
-      await authorizationUser("jerry@gmail.com", "123");
+      await createUser("Jerry", "Jem", "jerry@gmail.com", "123");
     } catch (err: any) {
       expect(mockgetEmail).toHaveBeenCalled();
-      expect(err.message).toBe("user not found");
+      expect(err.message).toBe("user already exists");
+    }
+  });
+
+  test("error createUser:", async () => {
+    const mockgetEmail = jest.spyOn(repository, "getEmailDB");
+    const mockCreateUser = jest.spyOn(repository, "createUserDB");
+    const mockHash = jest.spyOn(bcrypt, "hash");
+
+    mockgetEmail.mockResolvedValue([]);
+    mockHash.mockResolvedValue("123");
+    mockCreateUser.mockResolvedValue([]);
+
+    try {
+      await createUser("Jerry", "Jem", "jerry@gmail.com", "123");
+    } catch (err: any) {
+      expect(mockgetEmail).toHaveBeenCalled();
+      expect(mockHash).toHaveBeenCalled();
+      expect(mockCreateUser).toHaveBeenCalled();
+      expect(err.message).toBe("user not created");
     }
   });
 });
 
 describe("authorizationUser:", () => {
   test("", async () => {
-    const mockGetEmailDB = jest.spyOn(repository, "getEmailDB");
+    const mockGetEmail = jest.spyOn(repository, "getEmailDB");
     const mockCompare = jest.spyOn(bcrypt, "compare");
 
-    mockGetEmailDB.mockResolvedValue([
+    mockGetEmail.mockResolvedValue([
       {
         id: 2,
         name: "Jerry",
@@ -73,7 +100,7 @@ describe("authorizationUser:", () => {
       "aassssdddffggghhh122222"
     );
 
-    expect(mockGetEmailDB).toHaveBeenCalled();
+    expect(mockGetEmail).toHaveBeenCalled();
     expect(mockCompare).toHaveBeenCalled();
     expect(mockCompare).toHaveBeenCalledWith(
       "aassssdddffggghhh122222",
@@ -89,5 +116,42 @@ describe("authorizationUser:", () => {
         pwd: "aassssdddffggghhh122222",
       },
     ]);
+  });
+
+  test("error getEmail:", async () => {
+    const mockGetEmail = jest.spyOn(repository, "getEmailDB");
+
+    mockGetEmail.mockResolvedValue([]);
+
+    try {
+      await authorizationUser("jerry@gmail.com", "123");
+    } catch (err: any) {
+      expect(mockGetEmail).toHaveBeenCalled();
+      expect(err.message).toBe("user not found");
+    }
+  });
+
+  test("error password", async () => {
+    const mockGetEmail = jest.spyOn(repository, "getEmailDB");
+    const mockCompare = jest.spyOn(bcrypt, "compare");
+
+    mockGetEmail.mockResolvedValue([
+      {
+        id: 2,
+        name: "Jerry",
+        surname: "Jem",
+        email: "jerry@gmail.com",
+        pwd: "123",
+      },
+    ]);
+    mockCompare.mockResolvedValue(false);
+
+    try {
+      await authorizationUser("jerry@gmail.com", "123");
+    } catch (err: any) {
+      expect(mockGetEmail).toHaveBeenCalled();
+      expect(mockCompare).toHaveBeenCalled();
+      expect(err.message).toBe("password doesn't match");
+    }
   });
 });

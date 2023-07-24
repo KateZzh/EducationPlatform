@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import { createUserDB, getEmailDB } from "../repository/api.repository";
+import { createUserDB, getEmailDB, deleteUserDB } from "../repository/api.repository";
 
 const salt = 10;
 
@@ -29,4 +29,12 @@ async function authorizationUser(email: string, pwd: string) {
   return findUser;
 }
 
-export { createUser, authorizationUser };
+async function deleteUser(id: number) {
+  const data = await deleteUserDB(id);
+
+  if(!data.length) throw new Error("id not found");
+
+  return data;
+}
+
+export { createUser, authorizationUser, deleteUser };

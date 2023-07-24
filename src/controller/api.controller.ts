@@ -1,5 +1,9 @@
 import express, { Request, Response } from "express";
-import { createUser, authorizationUser } from "../service/api.service";
+import {
+  createUser,
+  authorizationUser,
+  deleteUser,
+} from "../service/api.service";
 
 const route = express.Router();
 
@@ -22,6 +26,17 @@ route.post("/auth", async (req: Request, res: Response): Promise<void> => {
     res.status(201).send(data);
   } catch (error: any) {
     res.status(405).send(error.message);
+  }
+});
+
+route.delete("/:id", async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id } = req.params;
+    const data = await deleteUser(id);
+
+    res.status(200).send(data);
+  } catch (error: any) {
+    res.status(404).send(error.message);
   }
 });
 

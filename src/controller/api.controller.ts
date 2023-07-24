@@ -4,6 +4,7 @@ import {
   authorizationUser,
   deleteUser,
 } from "../service/api.service";
+import buildResponse from "../helper/buildResponse";
 
 const route = express.Router();
 
@@ -12,9 +13,9 @@ route.post("/reg", async (req: Request, res: Response): Promise<void> => {
     const { name, surname, email, pwd } = req.body;
     const data = await createUser(name, surname, email, pwd);
 
-    res.status(201).send(data);
+    buildResponse(res, 201, data);
   } catch (error: any) {
-    res.status(405).send(error.message);
+    buildResponse(res, 404, error.message);
   }
 });
 
@@ -23,9 +24,9 @@ route.post("/auth", async (req: Request, res: Response): Promise<void> => {
     const { email, pwd } = req.body;
     const data = await authorizationUser(email, pwd);
 
-    res.status(201).send(data);
+    buildResponse(res, 201, data);
   } catch (error: any) {
-    res.status(405).send(error.message);
+    buildResponse(res, 404, error.message);
   }
 });
 
@@ -34,9 +35,9 @@ route.delete("/:id", async (req: Request, res: Response): Promise<void> => {
     const { id } = req.params;
     const data = await deleteUser(id);
 
-    res.status(200).send(data);
+    buildResponse(res, 200, data);
   } catch (error: any) {
-    res.status(404).send(error.message);
+    buildResponse(res, 404, error.message);
   }
 });
 

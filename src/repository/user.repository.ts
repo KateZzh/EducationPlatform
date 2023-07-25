@@ -19,17 +19,25 @@ async function getUserByIdDB(id: number): Promise<iUser[]> {
   return data;
 }
 
-async function updateUserDB(id: number, name: string, surname: string, email: string, pwd: string): Promise<iUser[]> {
+async function updateUserDB(
+  id: number,
+  name: string,
+  surname: string,
+  email: string,
+  pwd: string
+): Promise<iUser[]> {
   const client = await pool.connect();
 
   try {
     await client.query("begin");
 
-    const sql = "update users set name = $1, surname = $2, email = $3, pwd = $4 where id = $5 returning *";
-    const data = (await client.query(sql, [name, surname, email, pwd, id])).rows;
+    const sql =
+      "update users set name = $1, surname = $2, email = $3, pwd = $4 where id = $5 returning *";
+    const data = (await client.query(sql, [name, surname, email, pwd, id]))
+      .rows;
 
     await client.query("commit");
-    
+
     return data;
   } catch (error: any) {
     await client.query("rollback");
@@ -57,4 +65,30 @@ async function deleteUserDB(id: number): Promise<iUser[]> {
   }
 }
 
-export { getAllUsersDB, getUserByIdDB, updateUserDB, deleteUserDB };
+async function createUserTestDB(
+  name: string,
+  surname: string,
+  email: string,
+  pwd: string
+): Promise<iUser[]> {
+  const client = await pool.connect();
+
+  try {
+    await client.query("begin");
+
+    const sql =
+      "insert into users (name, surname, email, pwd) values ($1, $2, $3, $4) returning *";
+    const data = (await client.query(sql, [name, surname, email, pwd])).rows;
+
+    await client.query("commit");
+
+    return data;
+  } catch (error: any) {
+    await client.query("rollback");
+    console.log(`createUserTestDB: ${error.message}`);
+
+    return [];
+  }
+}
+
+export { getAllUsersDB, getUserByIdDB, updateUserDB, deleteUserDB, createUserTestDB };

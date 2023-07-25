@@ -4,8 +4,10 @@ import app from "../../app";
 let postID;
 
 test("post", async () => {
-  const res = await request(app).post("/course/").send({ course: "js" });
-  
+  const res = await request(app)
+    .post("/user")
+    .send({ name: "K", surname: "Zh", email: "kzh@gmail.com", pwd: "1111" });
+
   postID = res.body[0].id;
 
   expect(res.statusCode).toBe(201);
@@ -14,7 +16,7 @@ test("post", async () => {
 });
 
 test("get", async () => {
-  const res = await request(app).get("/course/");
+  const res = await request(app).get("/user");
 
   expect(res.statusCode).toBe(200);
   expect(res.body.length).toBeTruthy();
@@ -22,7 +24,7 @@ test("get", async () => {
 });
 
 test("getById", async () => {
-  const res = await request(app).get(`/course/${postID}`);
+  const res = await request(app).get(`/user/${postID}`);
 
   expect(res.statusCode).toBe(200);
   expect(res.body.length).toBeTruthy();
@@ -31,20 +33,31 @@ test("getById", async () => {
 });
 
 test("put", async () => {
-  const res = await request(app)
-    .put(`/course/${postID}`)
-    .send({ id: postID, course: "c++" });
+  const res = await request(app).put(`/user/${postID}`).send({
+    id: postID,
+    name: "K",
+    surname: "Zh",
+    email: "kzh@gmail.com",
+    pwd: "1234",
+  });
 
   expect(res.statusCode).toBe(200);
   expect(res.body.length).toBeTruthy();
   expect(res.body.length).toBeGreaterThanOrEqual(1);
-  expect(res.body[0]).toEqual({ id: postID, course: "c++" });
+  expect(res.body[0]).toEqual({
+    id: postID,
+    name: "K",
+    surname: "Zh",
+    email: "kzh@gmail.com",
+    pwd: "1234",
+  });
 });
 
 test("delete", async () => {
-  const res = await request(app).delete(`/course/${postID}`);
+  const res = await request(app).delete(`/user/${postID}`);
 
   expect(res.statusCode).toBe(200);
   expect(res.body.length).toBeTruthy();
   expect(res.body.length).toBeGreaterThanOrEqual(1);
+  expect(res.body[0].id).toBe(postID);
 });

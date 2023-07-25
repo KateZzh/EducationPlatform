@@ -37,7 +37,7 @@ async function getEmailDB(email: string): Promise<iUser[]> {
   return data;
 }
 
-async function deleteUserDB(id: number): Promise<iUser[]> {
+async function deleteUserTestDB(id: number): Promise<iUser[]> {
   const client = await pool.connect();
 
   try {
@@ -57,4 +57,4 @@ async function deleteUserDB(id: number): Promise<iUser[]> {
   }
 }
 
-export { createUserDB, getEmailDB, deleteUserDB };
+export { createUserDB, getEmailDB, deleteUserTestDB };

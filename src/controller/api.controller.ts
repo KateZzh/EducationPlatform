@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 import {
   createUser,
   authorizationUser,
-  deleteUser,
+  deleteUserTest,
 } from "../service/api.service";
 import buildResponse from "../helper/buildResponse";
 
@@ -33,7 +33,7 @@ route.post("/auth", async (req: Request, res: Response): Promise<void> => {
 route.delete("/:id", async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    const data = await deleteUser(id);
+    const data = await deleteUserTest(id);
 
     buildResponse(res, 200, data);
   } catch (error: any) {

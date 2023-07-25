@@ -1,4 +1,10 @@
-import { getAllUsersDB, getUserByIdDB, updateUserDB, deleteUserDB } from "../repository/user.repository";
+import {
+  getAllUsersDB,
+  getUserByIdDB,
+  updateUserDB,
+  deleteUserDB,
+  createUserTestDB,
+} from "../repository/user.repository";
 import { iUser } from "../interfaces/index";
 
 async function getAllUsers(): Promise<iUser[]> {
@@ -15,7 +21,13 @@ async function getUserById(id: number) {
   return data;
 }
 
-async function updateUser(id: number, name: string, surname: string, email: string, pwd: string) {
+async function updateUser(
+  id: number,
+  name: string,
+  surname: string,
+  email: string,
+  pwd: string
+) {
   const data = await updateUserDB(id, name, surname, email, pwd);
   if (!data.length) throw new Error("user doesn't update");
 
@@ -24,9 +36,21 @@ async function updateUser(id: number, name: string, surname: string, email: stri
 
 async function deleteUser(id: number) {
   const data = await deleteUserDB(id);
-  if(!data.length) throw new Error("user doesn't delete");
+  if (!data.length) throw new Error("user doesn't delete");
 
   return data;
 }
 
-export { getAllUsers, getUserById, updateUser, deleteUser };
+async function createUserTest(
+  name: string,
+  surname: string,
+  email: string,
+  pwd: string
+) {
+  const data = await createUserTestDB(name, surname, email, pwd);
+  if (!data.length) throw new Error("user doesn't create");
+
+  return data;
+}
+
+export { getAllUsers, getUserById, updateUser, deleteUser, createUserTest };

@@ -1,16 +1,10 @@
-import express, { Request, Response } from "express";
-import {
-  getUsers,
-  createCourse,
-  getCourseById,
-  updateCourse,
-  deleteCourse,
-} from "../service/course.service";
-import buildResponse from "../helper/buildResponse";
+import express, { Request, Response } from 'express';
+import { getUsers, createCourse, getCourseById, updateCourse, deleteCourse } from '../service/course.service';
+import buildResponse from '../helper/buildResponse';
 
 const route = express.Router();
 
-route.get("/", async (req: Request, res: Response): Promise<void> => {
+route.get('/', async (req: Request, res: Response): Promise<void> => {
   try {
     const data = await getUsers();
 
@@ -20,7 +14,7 @@ route.get("/", async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-route.post("/", async (req: Request, res: Response): Promise<void> => {
+route.post('/', async (req: Request, res: Response): Promise<void> => {
   try {
     const { course } = req.body;
     const data = await createCourse(course);
@@ -31,7 +25,7 @@ route.post("/", async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-route.get("/:id", async (req: Request, res: Response): Promise<void> => {
+route.get('/:id', async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
     const data = await getCourseById(id);
@@ -42,7 +36,7 @@ route.get("/:id", async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-route.put("/:id", async (req: Request, res: Response): Promise<void> => {
+route.put('/:id', async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
     const { course } = req.body;
@@ -54,7 +48,7 @@ route.put("/:id", async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-route.delete("/:id", async (req: Request, res: Response) => {
+route.delete('/:id', async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const data = await deleteCourse(id);

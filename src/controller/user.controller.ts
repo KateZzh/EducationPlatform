@@ -1,16 +1,10 @@
-import express, { Request, Response } from "express";
-import {
-  getAllUsers,
-  getUserById,
-  updateUser,
-  deleteUser,
-  createUserTest,
-} from "../service/user.service";
-import buildResponse from "../helper/buildResponse";
+import express, { Request, Response } from 'express';
+import { getAllUsers, getUserById, updateUser, deleteUser, createUserTest } from '../service/user.service';
+import buildResponse from '../helper/buildResponse';
 
 const route = express.Router();
 
-route.get("/", async (req: Request, res: Response): Promise<void> => {
+route.get('/', async (req: Request, res: Response): Promise<void> => {
   try {
     const data = await getAllUsers();
 
@@ -20,7 +14,7 @@ route.get("/", async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-route.get("/:id", async (req: Request, res: Response): Promise<void> => {
+route.get('/:id', async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
     const data = await getUserById(id);
@@ -31,7 +25,7 @@ route.get("/:id", async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-route.put("/:id", async (req: Request, res: Response): Promise<void> => {
+route.put('/:id', async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
     const { name, surname, email, pwd } = req.body;
@@ -43,7 +37,7 @@ route.put("/:id", async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-route.delete("/:id", async (req: Request, res: Response): Promise<void> => {
+route.delete('/:id', async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
     const data = await deleteUser(id);
@@ -54,7 +48,7 @@ route.delete("/:id", async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-route.post("/", async (req: Request, res: Response): Promise<void> => {
+route.post('/', async (req: Request, res: Response): Promise<void> => {
   try {
     const { name, surname, email, pwd } = req.body;
     const data = await createUserTest(name, surname, email, pwd);

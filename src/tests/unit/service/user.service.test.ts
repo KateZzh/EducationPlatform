@@ -1,28 +1,23 @@
-import {
-  getAllUsers,
-  getUserById,
-  updateUser,
-  deleteUser,
-} from "../../../service/user.service";
-import * as repository from "../../../repository/user.repository";
+import { getAllUsers, getUserById, updateUser, deleteUser } from '../../../service/user.service';
+import * as repository from '../../../repository/user.repository';
 
-describe("getAllUsers:", () => {
-  test("", async () => {
-    const mock = jest.spyOn(repository, "getAllUsersDB");
+describe('getAllUsers:', () => {
+  test('', async () => {
+    const mock = jest.spyOn(repository, 'getAllUsersDB');
     mock.mockResolvedValue([
       {
         id: 1,
-        name: "Tom",
-        surname: "Tomik",
-        email: "tom@gmail.com",
-        pwd: "123a123a",
+        name: 'Tom',
+        surname: 'Tomik',
+        email: 'tom@gmail.com',
+        pwd: '123a123a',
       },
       {
         id: 2,
-        name: "Jerry",
-        surname: "Jem",
-        email: "jerry@gmail.com",
-        pwd: "456a456a",
+        name: 'Jerry',
+        surname: 'Jem',
+        email: 'jerry@gmail.com',
+        pwd: '456a456a',
       },
     ]);
 
@@ -34,44 +29,44 @@ describe("getAllUsers:", () => {
     expect(res).toEqual([
       {
         id: 1,
-        name: "Tom",
-        surname: "Tomik",
-        email: "tom@gmail.com",
-        pwd: "123a123a",
+        name: 'Tom',
+        surname: 'Tomik',
+        email: 'tom@gmail.com',
+        pwd: '123a123a',
       },
       {
         id: 2,
-        name: "Jerry",
-        surname: "Jem",
-        email: "jerry@gmail.com",
-        pwd: "456a456a",
+        name: 'Jerry',
+        surname: 'Jem',
+        email: 'jerry@gmail.com',
+        pwd: '456a456a',
       },
     ]);
   });
 
-  test("", async () => {
-    const mock = jest.spyOn(repository, "getAllUsersDB");
+  test('', async () => {
+    const mock = jest.spyOn(repository, 'getAllUsersDB');
     mock.mockResolvedValue([]);
 
     try {
       await getAllUsers();
     } catch (err: any) {
       expect(mock).toHaveBeenCalled();
-      expect(err.message).toBe("table is empty");
+      expect(err.message).toBe('table is empty');
     }
   });
 });
 
-describe("getUserById:", () => {
-  test("", async () => {
-    const mock = jest.spyOn(repository, "getUserByIdDB");
+describe('getUserById:', () => {
+  test('', async () => {
+    const mock = jest.spyOn(repository, 'getUserByIdDB');
     mock.mockResolvedValue([
       {
         id: 2,
-        name: "Jerry",
-        surname: "Jem",
-        email: "jerry@gmail.com",
-        pwd: "456a456a",
+        name: 'Jerry',
+        surname: 'Jem',
+        email: 'jerry@gmail.com',
+        pwd: '456a456a',
       },
     ]);
 
@@ -88,48 +83,42 @@ describe("getUserById:", () => {
     expect(res).toEqual([
       {
         id: 2,
-        name: "Jerry",
-        surname: "Jem",
-        email: "jerry@gmail.com",
-        pwd: "456a456a",
+        name: 'Jerry',
+        surname: 'Jem',
+        email: 'jerry@gmail.com',
+        pwd: '456a456a',
       },
     ]);
     expect(res).toHaveLength(1);
   });
 
-  test("", async () => {
-    const mock = jest.spyOn(repository, "getUserByIdDB");
+  test('', async () => {
+    const mock = jest.spyOn(repository, 'getUserByIdDB');
     mock.mockResolvedValue([]);
 
     try {
       await getUserById(2);
     } catch (err: any) {
       expect(mock).toHaveBeenCalled();
-      expect(err.message).toBe("id not found");
+      expect(err.message).toBe('id not found');
     }
   });
 });
 
-describe("updateUser:", () => {
-  test("", async () => {
-    const mock = jest.spyOn(repository, "updateUserDB");
+describe('updateUser:', () => {
+  test('', async () => {
+    const mock = jest.spyOn(repository, 'updateUserDB');
     mock.mockResolvedValue([
       {
         id: 1,
-        name: "Tom",
-        surname: "Tomik",
-        email: "tom@gmail.com",
-        pwd: "12345678aa",
+        name: 'Tom',
+        surname: 'Tomik',
+        email: 'tom@gmail.com',
+        pwd: '12345678aa',
       },
     ]);
 
-    const res = await updateUser(
-      1,
-      "Tom",
-      "Tomik",
-      "tom@gmail.com",
-      "12345678aa"
-    );
+    const res = await updateUser(1, 'Tom', 'Tomik', 'tom@gmail.com', '12345678aa');
 
     expect(mock).toHaveBeenCalled();
 
@@ -139,21 +128,21 @@ describe("updateUser:", () => {
     expect(res).toEqual([
       {
         id: 1,
-        name: "Tom",
-        surname: "Tomik",
-        email: "tom@gmail.com",
-        pwd: "12345678aa",
+        name: 'Tom',
+        surname: 'Tomik',
+        email: 'tom@gmail.com',
+        pwd: '12345678aa',
       },
     ]);
     expect(res).toHaveLength(1);
   });
 
-  test("", async () => {
-    const mock = jest.spyOn(repository, "updateUserDB");
+  test('', async () => {
+    const mock = jest.spyOn(repository, 'updateUserDB');
     mock.mockResolvedValue([]);
 
     try {
-      await updateUser(1, "Tom", "Tomik", "tom@gmail.com", "12345678aa");
+      await updateUser(1, 'Tom', 'Tomik', 'tom@gmail.com', '12345678aa');
     } catch (err: any) {
       expect(mock).toHaveBeenCalled();
       expect(err.message).toBe("user doesn't update");
@@ -161,16 +150,16 @@ describe("updateUser:", () => {
   });
 });
 
-describe("deleteUser:", () => {
-  test("", async () => {
-    const mock = jest.spyOn(repository, "deleteUserDB");
+describe('deleteUser:', () => {
+  test('', async () => {
+    const mock = jest.spyOn(repository, 'deleteUserDB');
     mock.mockResolvedValue([
       {
         id: 2,
-        name: "Jerry",
-        surname: "Jem",
-        email: "jerry@gmail.com",
-        pwd: "456a456a",
+        name: 'Jerry',
+        surname: 'Jem',
+        email: 'jerry@gmail.com',
+        pwd: '456a456a',
       },
     ]);
 
@@ -185,17 +174,17 @@ describe("deleteUser:", () => {
     expect(res).toEqual([
       {
         id: 2,
-        name: "Jerry",
-        surname: "Jem",
-        email: "jerry@gmail.com",
-        pwd: "456a456a",
+        name: 'Jerry',
+        surname: 'Jem',
+        email: 'jerry@gmail.com',
+        pwd: '456a456a',
       },
     ]);
     expect(res).toHaveLength(1);
   });
 
-  test("", async () => {
-    const mock = jest.spyOn(repository, "deleteUserDB");
+  test('', async () => {
+    const mock = jest.spyOn(repository, 'deleteUserDB');
     mock.mockResolvedValue([]);
 
     try {

@@ -1,18 +1,18 @@
-import bcrypt from "bcrypt";
-import { createUserDB, getEmailDB, deleteUserTestDB } from "../repository/api.repository";
+import bcrypt from 'bcrypt';
+import { createUserDB, getEmailDB, deleteUserTestDB } from '../repository/api.repository';
 
 const salt = 10;
 
 async function createUser(name: string, surname: string, email: string, pwd: string) {
   const foundEmail = await getEmailDB(email);
 
-  if (foundEmail.length) throw new Error("user already exists");
+  if (foundEmail.length) throw new Error('user already exists');
 
   const hashedPwd = await bcrypt.hash(pwd, salt);
 
   const data = await createUserDB(name, surname, email, hashedPwd);
 
-  if (!data.length) throw new Error("user not created");
+  if (!data.length) throw new Error('user not created');
 
   return data;
 }
@@ -20,7 +20,7 @@ async function createUser(name: string, surname: string, email: string, pwd: str
 async function authorizationUser(email: string, pwd: string) {
   const findUser = await getEmailDB(email);
 
-  if (!findUser.length) throw new Error("user not found");
+  if (!findUser.length) throw new Error('user not found');
 
   const bool = await bcrypt.compare(pwd, findUser[0].pwd);
 
@@ -32,7 +32,7 @@ async function authorizationUser(email: string, pwd: string) {
 async function deleteUserTest(id: number) {
   const data = await deleteUserTestDB(id);
 
-  if(!data.length) throw new Error("id not found");
+  if (!data.length) throw new Error('id not found');
 
   return data;
 }

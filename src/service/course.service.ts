@@ -1,9 +1,9 @@
-import { getUsersDB, createCourseDB, getCourseByIdDB, updateCourseDB, deleteCourseDB} from "../repository/course.repository";
-import { iCourse } from "../interfaces";
+import { getUsersDB, createCourseDB, getCourseByIdDB, updateCourseDB, deleteCourseDB } from '../repository/course.repository';
+import { iCourse } from '../interfaces';
 
 async function getUsers(): Promise<iCourse[]> {
   const data = await getUsersDB();
-  if (!data.length) throw new Error("table is empty");
+  if (!data.length) throw new Error('table is empty');
 
   return data;
 }
@@ -17,7 +17,7 @@ async function createCourse(course: string) {
 
 async function getCourseById(id: number) {
   const data = await getCourseByIdDB(id);
-  if (!data.length) throw new Error("id not found");
+  if (!data.length) throw new Error('id not found');
 
   return data;
 }

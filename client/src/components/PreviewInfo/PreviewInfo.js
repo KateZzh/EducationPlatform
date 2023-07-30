@@ -12,20 +12,19 @@ function PreviewInfo() {
           </p>
           <div className={style.btnInfo}>About platform</div>
 
-          <div className={style.statistic}>
-            <div className={style.statWrapper}>
-              <div className={style.imgLightning}></div>
-              <p className={style.number}>600</p>
-              <div>+</div>
+          <div>
+            <div>
+              <div></div>
+              <p>
+                600 <span>+</span>
+              </p>
             </div>
-
-            <p className={style.students}>Students</p>
+            <p>Students</p>
           </div>
         </div>
 
         <div className={style.previewGuy}></div>
       </div>
-
       <div></div>
       <div></div>
       <div></div>

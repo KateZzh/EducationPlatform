@@ -1,20 +1,18 @@
 .preview {
-  margin: auto;
+  margin: 7% auto;
   display: flex;
   align-items: center;
-  margin: 7%;
 }
 
 .preview .previewInfo {
-  width: 520px;
+  width: 500px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
 }
 
 .preview .previewInfo .discription {
   font: 700 16px Montserrat;
-  color: var(--primaty-cyan-dark, #2b788b);
+  color: #2b788b;
   letter-spacing: 2.24px;
   text-transform: uppercase;
 }
@@ -22,22 +20,70 @@
 .preview .previewInfo h1 {
   font: 400 56px Dela Gothic One;
   width: 500px;
+  line-height: 120%;
+  letter-spacing: -2.24px;
+  padding-top: 24px;
 }
 
 .preview .previewInfo .info {
   font: 600 18px Montserrat;
-  width: 396px;
+  width: 397px;
+  line-height: 140%;
+  letter-spacing: -0.72px;
+  color: #757575;
+  padding-top: 30px;
 }
 
 .preview .previewInfo .btnInfo {
   font: 700 16px Montserrat;
   padding: 14px;
   border-radius: 100px;
-  background: var(--primaty-cyan-light, #c3dce3);
+  background: #c3dce3;
   width: 165px;
+  margin-top: 32px;
+  color: #2b788b;
 }
 
-.previewGuy {
+.preview .previewInfo .statistic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 163px;
+  padding-top: 49px;
+}
+
+.preview .previewInfo .statistic .statWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.preview .previewInfo .statistic .statWrapper .imgLightning {
+  background-image: url("../PreviewInfo/assets/imgLightning.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 24px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.preview .statistic .statWrapper .number {
+  font: 400 40px Dela Gothic One;
+  color: #000000;
+}
+
+.preview .statistic .statWrapper div {
+  font: 400 40px Dela Gothic One;
+  color: #2b788b;
+}
+
+.preview .statistic .students {
+  width: 163px;
+  text-align: center;
+  color: #585858;
+  font: 600 16px Montserrat;
+}
+
+.preview .previewGuy {
   background-image: url("../PreviewInfo/assets/previewGuy.png");
   width: 710px;
   height: 500px;

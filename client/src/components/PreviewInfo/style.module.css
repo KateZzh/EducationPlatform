@@ -1,0 +1,48 @@
+.preview {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  margin: 7%;
+}
+
+.preview .previewInfo {
+  width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.preview .previewInfo .discription {
+  font: 700 16px Montserrat;
+  color: var(--primaty-cyan-dark, #2b788b);
+  letter-spacing: 2.24px;
+  text-transform: uppercase;
+}
+
+.preview .previewInfo h1 {
+  font: 400 56px Dela Gothic One;
+  width: 500px;
+}
+
+.preview .previewInfo .info {
+  font: 600 18px Montserrat;
+  width: 396px;
+}
+
+.preview .previewInfo .btnInfo {
+  font: 700 16px Montserrat;
+  padding: 14px;
+  border-radius: 100px;
+  background: var(--primaty-cyan-light, #c3dce3);
+  width: 165px;
+}
+
+.previewGuy {
+  background-image: url("../PreviewInfo/assets/previewGuy.png");
+  width: 710px;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  left: 12%;
+}

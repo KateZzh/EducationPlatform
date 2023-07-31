@@ -1,7 +1,9 @@
 .preview {
+  width: 1220px;
   margin: 7% auto;
   display: flex;
   align-items: center;
+  background-color: #f6f5f4;
 }
 
 .preview .previewInfo {
@@ -91,4 +93,66 @@
   background-size: contain;
   position: relative;
   left: 12%;
+}
+
+.learningWrapper {
+  background-color: #fff;
+}
+
+.learningWrapper .learning {
+  width: 1220px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.learningWrapper .learning .learningImg {
+  background-image: url(./assets/learningGirl.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 580px;
+  height: 445px;
+  margin: 77.5px 0;
+}
+
+.learningWrapper .learning .learningInfo {
+  width: 480px;
+  padding-top: 152px;
+}
+
+.learningWrapper .learning .learningInfo h1 {
+  font: 400 48px Dela Gothic One;
+  color: #000;
+  line-height: 100%;
+  letter-spacing: -1.92px;
+}
+
+.learningWrapper .learning .learningInfo p {
+  font: 600 18px Montserrat;
+  color: #757575;
+  line-height: 140%;
+  letter-spacing: -0.72px;
+  padding-top: 30px;
+}
+
+.learningWrapper .learning .learningInfo .btnWrapper {
+  display: flex;
+  width: 480px;
+  padding-top: 30px;
+}
+
+.learningWrapper .learning .learningInfo .btnWrapper .sprintBtn {
+  background-image: url(./assets/sneakersBtn.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 131px;
+  height: 145px;
+  margin-right: 21px;
+}
+
+.learningWrapper .learning .learningInfo .btnWrapper .tasksBtn {
+  background-image: url(./assets/speakerBtn.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 172px;
+  height: 145px;
 }

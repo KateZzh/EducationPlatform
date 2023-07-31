@@ -1,4 +1,6 @@
 .wrapper {
+  width: 1220px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,14 +9,8 @@
 .wrapper h1 {
   font: 400 16px Dela Gothic One;
   color: #000;
-}
-
-.wrapper h1::after {
-  content: "|";
-  width: 0px;
-  height: 16px;
-  background-color: #000;
-  margin-left: 28px;
+  border-right: 1.2px solid #e0e0e0;
+  padding-right: 28px;
 }
 
 .wrapper .btns {

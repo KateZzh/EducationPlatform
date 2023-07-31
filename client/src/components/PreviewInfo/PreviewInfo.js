@@ -26,7 +26,23 @@ function PreviewInfo() {
         <div className={style.previewGuy}></div>
       </div>
 
-      <div></div>
+      <div className={style.learningWrapper}>
+        <div className={style.learning}>
+          <div className={style.learningImg}></div>
+
+          <div className={style.learningInfo}>
+            <h1>Learn a language in a playful way</h1>
+            <p>Make learning programming languages more fun with mini-games</p>
+
+            <div className={style.btnWrapper}>
+              <div className={style.sprintBtn}></div>
+
+              <div className={style.tasksBtn}></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div></div>
       <div></div>
     </>

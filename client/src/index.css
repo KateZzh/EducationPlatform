@@ -4,10 +4,9 @@
   box-sizing: border-box;
   font-style: normal;
   font-family: Montserrat;
-  background-color: #f6f5f4;
 }
 
 body {
-  width: 1220px;
   margin: auto;
+  background-color: #f6f5f4;
 }

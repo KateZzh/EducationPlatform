@@ -46,6 +46,11 @@
   color: #2b788b;
 }
 
+.preview .previewInfo .btnInfo:hover {
+  transition: 0.5s;
+  opacity: 70%;
+}
+
 .preview .previewInfo .statistic {
   display: flex;
   flex-direction: column;
@@ -149,10 +154,130 @@
   margin-right: 21px;
 }
 
+.learningWrapper .learning .learningInfo .btnWrapper .sprintBtn:hover {
+  transition: 0.5s;
+  opacity: 70%;
+}
+
 .learningWrapper .learning .learningInfo .btnWrapper .tasksBtn {
   background-image: url(./assets/speakerBtn.png);
   background-repeat: no-repeat;
   background-size: contain;
   width: 172px;
   height: 145px;
+}
+
+.learningWrapper .learning .learningInfo .btnWrapper .tasksBtn:hover {
+  transition: 0.5s;
+  opacity: 70%;
+}
+
+.knowledge {
+  width: 1220px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.knowledge .knowledgeInfo {
+  width: 475px;
+  padding-top: 136px;
+}
+
+.knowledge .knowledgeInfo h1 {
+  font: 400 48px Dela Gothic One;
+  color: #000;
+  line-height: 100%;
+  letter-spacing: -1.92px;
+}
+
+.knowledge .knowledgeInfo p {
+  font: 600 18px Montserrat;
+  color: #757575;
+  line-height: 140%;
+  letter-spacing: -0.72px;
+  padding-top: 30px;
+}
+
+.knowledge .knowledgeInfo .btnKnowledge {
+  border-radius: 100px;
+  background-color: #c3dce3;
+  width: 131px;
+  padding: 14px 0;
+  color: #2b788b;
+  font: 700 16px Montserrat;
+  line-height: 100%;
+  letter-spacing: -0.64px;
+  text-align: center;
+  margin-top: 34px;
+}
+
+.knowledge .knowledgeInfo .btnKnowledge:hover {
+  transition: 0.5s;
+  opacity: 70%;
+}
+
+.knowledge .knowledgeImg {
+  background-image: url(./assets/girlWithBooks.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 580px;
+  height: 474px;
+  margin-top: 26px;
+}
+
+.progressWrapper {
+  background-color: #fff;
+}
+
+.progressWrapper .progress {
+  width: 1220px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.progressWrapper .progress .progressImg {
+  background-image: url(./assets/GuyAndGirl.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 680px;
+  height: 409px;
+  margin: 95px 0;
+}
+
+.progressWrapper .progress .statistics {
+  padding-top: 149px;
+  width: 475px;
+}
+
+.progressWrapper .progress .statistics h1 {
+  font: 400 48px Dela Gothic One;
+  color: #000;
+  line-height: 100%;
+  letter-spacing: -1.92px;
+}
+
+.progressWrapper .progress .statistics p {
+  font: 600 18px Montserrat;
+  color: #757575;
+  line-height: 140%;
+  letter-spacing: -0.72px;
+  padding-top: 30px;
+}
+
+.progressWrapper .progress .statistics .btnStatistics {
+  border-radius: 100px;
+  background-color: #c3dce3;
+  width: 129px;
+  padding: 14px 0;
+  color: #2b788b;
+  font: 700 16px Montserrat;
+  line-height: 100%;
+  letter-spacing: -0.64px;
+  text-align: center;
+  margin-top: 34px;
+}
+
+.progressWrapper .progress .statistics .btnStatistics:hover {
+  transition: 0.5s;
+  opacity: 70%;
 }

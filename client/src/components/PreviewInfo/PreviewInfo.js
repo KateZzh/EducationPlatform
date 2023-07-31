@@ -10,12 +10,15 @@ function PreviewInfo() {
           <p className={style.info}>
             Any subject, in any language, on any device, for all ages!
           </p>
+
           <div className={style.btnInfo}>About platform</div>
 
           <div className={style.statistic}>
             <div className={style.statWrapper}>
               <div className={style.imgLightning}></div>
+
               <p className={style.number}>600</p>
+
               <div>+</div>
             </div>
 
@@ -43,8 +46,29 @@ function PreviewInfo() {
         </div>
       </div>
 
-      <div></div>
-      <div></div>
+      <div className={style.knowledge}>
+        <div className={style.knowledgeInfo}>
+          <h1>Increase your knowledge</h1>
+          <p>Traditional and new effective approaches to learning languages</p>
+
+          <div className={style.btnKnowledge}>Textbook →</div>
+        </div>
+
+        <div className={style.knowledgeImg}></div>
+      </div>
+
+      <div className={style.progressWrapper}>
+        <div className={style.progress}>
+          <div className={style.progressImg}></div>
+
+          <div className={style.statistics}>
+            <h1>Watch your progress every day</h1>
+            <p>Save statistics on your achievements and mistakes</p>
+
+            <div className={style.btnStatistics}>Statistics →</div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

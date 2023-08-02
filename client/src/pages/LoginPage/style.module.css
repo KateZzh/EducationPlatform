@@ -1,0 +1,31 @@
+.login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1220px;
+  margin: auto;
+}
+
+.login .loginForm h1 {
+  font: 400 56px Dela Gothic One;
+  color: #000000;
+}
+
+.login .loginForm input {
+  border-radius: 2px;
+  border: 1px solid var(--gray-gray-4, #ced4da);
+  width: 519px;
+  margin-top: 30px;
+  padding: 6px 20px;
+  color: #adb5bd;
+  font: 400 20px Open Sans;
+}
+
+/* .login .loginForm .loginBtn {
+
+} */
+
+.login .loginForm .loginImg {
+  border-radius: 100px;
+  background: var(--primaty-cyan-dark, #2b788b);
+}

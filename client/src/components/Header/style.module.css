@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.wrapper h1 {
+.wrapper h1 a{
   font: 400 16px Dela Gothic One;
   color: #000;
   border-right: 1.2px solid #e0e0e0;
@@ -19,16 +19,16 @@
   gap: 25px;
 }
 
-.wrapper .login {
+.wrapper .login a {
   font: 400 16px Montserrat;
   color: #000;
 }
 
 .wrapper .signUp {
   font: 400 16px Montserrat;
+  background-color: #2b788b;
   color: #fff;
   border-radius: 14.188px;
-  background: #2b788b;
   padding: 13px 0;
   width: 108px;
   text-align: center;

@@ -1,6 +1,6 @@
 .preview {
   width: 1220px;
-  margin: 7% auto;
+  margin: 118px auto 124px;
   display: flex;
   align-items: center;
   background-color: #f6f5f4;
@@ -108,6 +108,7 @@
   width: 1220px;
   margin: 0 auto;
   display: flex;
+  justify-content: space-between;
 }
 
 .learningWrapper .learning .learningImg {
@@ -127,7 +128,6 @@
 .learningWrapper .learning .learningInfo h1 {
   font: 400 48px Dela Gothic One;
   color: #000;
-  line-height: 100%;
   letter-spacing: -1.92px;
 }
 
@@ -176,6 +176,7 @@
   width: 1220px;
   margin: 0 auto;
   display: flex;
+  justify-content: space-between;
 }
 
 .knowledge .knowledgeInfo {
@@ -186,7 +187,6 @@
 .knowledge .knowledgeInfo h1 {
   font: 400 48px Dela Gothic One;
   color: #000;
-  line-height: 100%;
   letter-spacing: -1.92px;
 }
 
@@ -205,7 +205,6 @@
   padding: 14px 0;
   color: #2b788b;
   font: 700 16px Montserrat;
-  line-height: 100%;
   letter-spacing: -0.64px;
   text-align: center;
   margin-top: 34px;
@@ -233,6 +232,7 @@
   width: 1220px;
   margin: 0 auto;
   display: flex;
+  justify-content: space-between;
 }
 
 .progressWrapper .progress .progressImg {
@@ -252,7 +252,6 @@
 .progressWrapper .progress .statistics h1 {
   font: 400 48px Dela Gothic One;
   color: #000;
-  line-height: 100%;
   letter-spacing: -1.92px;
 }
 
@@ -271,7 +270,6 @@
   padding: 14px 0;
   color: #2b788b;
   font: 700 16px Montserrat;
-  line-height: 100%;
   letter-spacing: -0.64px;
   text-align: center;
   margin-top: 34px;

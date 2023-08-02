@@ -16,9 +16,7 @@ function PreviewInfo() {
           <div className={style.statistic}>
             <div className={style.statWrapper}>
               <div className={style.imgLightning}></div>
-
               <p className={style.number}>600</p>
-
               <div>+</div>
             </div>
 

@@ -42,6 +42,7 @@
 .footerWrapper .footerContacts {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .footerWrapper .footerContacts .footerLogo {
@@ -72,4 +73,9 @@
   background-size: contain;
   width: 30px;
   height: 24px;
+}
+
+.footerWrapper .footerContacts p {
+  font: 600 12px Montserrat;
+  color: #757575;
 }

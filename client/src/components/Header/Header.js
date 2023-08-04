@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <div className={style.wrapper}>
-      <h1>
+      <div className={style.hschool}>
         <Link to={"/"}>Hschool</Link>
-      </h1>
+      </div>
 
       <div className={style.btns}>
         <div className={style.login}>

@@ -4,45 +4,47 @@
   align-items: center;
   width: 1220px;
   margin: 83px auto;
-}
 
-.login .loginForm h1 {
-  font: 400 56px Dela Gothic One;
-  color: #000000;
-}
+  .loginForm {
+    & h1 {
+      font: 400 56px Dela Gothic One;
+      color: #000000;
+    }
 
-.login .loginForm input {
-  border-radius: 2px;
-  border: 1px solid #ced4da;
-  width: 519px;
-  margin-top: 30px;
-  padding: 6px 20px;
-  color: #000000;
-  font: 400 20px Open Sans;
-}
+    & input {
+      border-radius: 2px;
+      border: 1px solid #ced4da;
+      width: 519px;
+      margin-top: 30px;
+      padding: 6px 20px;
+      color: #000000;
+      font: 400 20px Open Sans;
+    }
 
-.login .loginForm .loginBtn {
-  width: 110px;
-  height: 44px;
-  border-radius: 100px;
-  background-color: #2b788b;
-  color: #fff;
-  text-align: center;
-  font: 700 16px Montserrat;
-  letter-spacing: -0.64px;
-  padding: 14px 0;
-  margin-top: 32px;
-}
+    .loginBtn {
+      width: 110px;
+      height: 44px;
+      border-radius: 100px;
+      background-color: #2b788b;
+      color: #fff;
+      text-align: center;
+      font: 700 16px Montserrat;
+      letter-spacing: -0.64px;
+      padding: 14px 0;
+      margin-top: 32px;
 
-.login .loginForm .loginBtn:hover {
-  transition: 0.5s;
-  opacity: 70%;
-}
+      &:hover {
+        transition: 0.5s;
+        opacity: 70%;
+      }
+    }
+  }
 
-.login .loginImg {
-  background-image: url(./assets/imgBoy.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 481px;
-  height: 320px;
+  .loginImg {
+    background-image: url(./assets/imgBoy.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 481px;
+    height: 320px;
+  }
 }

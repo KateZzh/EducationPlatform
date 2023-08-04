@@ -4,7 +4,13 @@
   box-sizing: border-box;
   font-style: normal;
   font-family: Montserrat;
+  font-style: normal;
   background-color: #f6f5f4;
+}
+
+html {
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 body {

@@ -4,172 +4,172 @@
   display: flex;
   align-items: center;
   background-color: #f6f5f4;
-}
 
-.preview .previewInfo {
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-}
+  .previewInfo {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
 
-.preview .previewInfo .discription {
-  font: 700 16px Montserrat;
-  color: #2b788b;
-  letter-spacing: 2.24px;
-  text-transform: uppercase;
-}
+    .discription {
+      font: 700 16px Montserrat;
+      color: #2b788b;
+      letter-spacing: 2.24px;
+      text-transform: uppercase;
+    }
 
-.preview .previewInfo h1 {
-  font: 400 56px Dela Gothic One;
-  width: 500px;
-  line-height: 120%;
-  letter-spacing: -2.24px;
-  padding-top: 24px;
-}
+    & h1 {
+      font: 400 56px Dela Gothic One;
+      width: 500px;
+      line-height: 120%;
+      letter-spacing: -2.24px;
+      padding-top: 24px;
+    }
 
-.preview .previewInfo .info {
-  font: 600 18px Montserrat;
-  width: 397px;
-  line-height: 140%;
-  letter-spacing: -0.72px;
-  color: #757575;
-  padding-top: 30px;
-}
+    .info {
+      font: 600 18px Montserrat;
+      width: 397px;
+      line-height: 140%;
+      letter-spacing: -0.72px;
+      color: #757575;
+      padding-top: 30px;
+    }
 
-.preview .previewInfo .btnInfo {
-  font: 700 16px Montserrat;
-  padding: 14px;
-  border-radius: 100px;
-  background: #c3dce3;
-  width: 165px;
-  margin-top: 32px;
-  color: #2b788b;
-}
+    .btnInfo {
+      font: 700 16px Montserrat;
+      padding: 14px;
+      border-radius: 100px;
+      background: #c3dce3;
+      width: 165px;
+      margin-top: 32px;
+      color: #2b788b;
 
-.preview .previewInfo .btnInfo:hover {
-  transition: 0.5s;
-  opacity: 70%;
-}
+      &:hover {
+        transition: 0.5s;
+        opacity: 70%;
+      }
+    }
 
-.preview .previewInfo .statistic {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 163px;
-  padding-top: 49px;
-}
+    .statistic {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 163px;
+      padding-top: 49px;
 
-.preview .previewInfo .statistic .statWrapper {
-  display: flex;
-  align-items: center;
-}
+      .statWrapper {
+        display: flex;
+        align-items: center;
 
-.preview .previewInfo .statistic .statWrapper .imgLightning {
-  background-image: url("../PreviewInfo/assets/imgLightning.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 24px;
-  height: 30px;
-  margin-right: 10px;
-}
+        .imgLightning {
+          background-image: url("../PreviewInfo/assets/imgLightning.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 24px;
+          height: 30px;
+          margin-right: 10px;
+        }
+      }
 
-.preview .statistic .statWrapper .number {
-  font: 400 40px Dela Gothic One;
-  color: #000000;
-}
+      .number {
+        font: 400 40px Dela Gothic One;
+        color: #000000;
+      }
 
-.preview .statistic .statWrapper div {
-  font: 400 40px Dela Gothic One;
-  color: #2b788b;
-}
+      & div {
+        font: 400 40px Dela Gothic One;
+        color: #2b788b;
+      }
+    }
 
-.preview .statistic .students {
-  width: 163px;
-  text-align: center;
-  color: #585858;
-  font: 600 16px Montserrat;
-}
+    .students {
+      width: 163px;
+      text-align: center;
+      color: #585858;
+      font: 600 16px Montserrat;
+    }
+  }
 
-.preview .previewGuy {
-  background-image: url("../PreviewInfo/assets/previewGuy.png");
-  width: 710px;
-  height: 500px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: relative;
-  left: 12%;
+  .previewGuy {
+    background-image: url("../PreviewInfo/assets/previewGuy.png");
+    width: 710px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    left: 12%;
+  }
 }
 
 .learningWrapper {
   background-color: #fff;
-}
 
-.learningWrapper .learning {
-  width: 1220px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
+  .learning {
+    width: 1220px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
 
-.learningWrapper .learning .learningImg {
-  background-image: url(./assets/learningGirl.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 580px;
-  height: 445px;
-  margin: 77.5px 0;
-}
+    .learningImg {
+      background-image: url(./assets/learningGirl.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 580px;
+      height: 445px;
+      margin: 77.5px 0;
+    }
 
-.learningWrapper .learning .learningInfo {
-  width: 480px;
-  padding-top: 152px;
-}
+    .learningInfo {
+      width: 480px;
+      padding-top: 152px;
 
-.learningWrapper .learning .learningInfo h1 {
-  font: 400 48px Dela Gothic One;
-  color: #000;
-  letter-spacing: -1.92px;
-}
+      & h1 {
+        font: 400 48px Dela Gothic One;
+        color: #000;
+        letter-spacing: -1.92px;
+      }
 
-.learningWrapper .learning .learningInfo p {
-  font: 600 18px Montserrat;
-  color: #757575;
-  line-height: 140%;
-  letter-spacing: -0.72px;
-  padding-top: 30px;
-}
+      & p {
+        font: 600 18px Montserrat;
+        color: #757575;
+        line-height: 140%;
+        letter-spacing: -0.72px;
+        padding-top: 30px;
+      }
 
-.learningWrapper .learning .learningInfo .btnWrapper {
-  display: flex;
-  width: 480px;
-  padding-top: 30px;
-}
+      .btnWrapper {
+        display: flex;
+        width: 480px;
+        padding-top: 30px;
 
-.learningWrapper .learning .learningInfo .btnWrapper .sprintBtn {
-  background-image: url(./assets/sneakersBtn.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 131px;
-  height: 145px;
-  margin-right: 21px;
-}
+        .sprintBtn {
+          background-image: url(./assets/sneakersBtn.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 131px;
+          height: 145px;
+          margin-right: 21px;
 
-.learningWrapper .learning .learningInfo .btnWrapper .sprintBtn:hover {
-  transition: 0.5s;
-  opacity: 70%;
-}
+          &:hover {
+            transition: 0.5s;
+            opacity: 70%;
+          }
+        }
 
-.learningWrapper .learning .learningInfo .btnWrapper .tasksBtn {
-  background-image: url(./assets/speakerBtn.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 172px;
-  height: 145px;
-}
+        .tasksBtn {
+          background-image: url(./assets/speakerBtn.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 172px;
+          height: 145px;
 
-.learningWrapper .learning .learningInfo .btnWrapper .tasksBtn:hover {
-  transition: 0.5s;
-  opacity: 70%;
+          &:hover {
+            transition: 0.5s;
+            opacity: 70%;
+          }
+        }
+      }
+    }
+  }
 }
 
 .knowledge {
@@ -177,105 +177,105 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-}
 
-.knowledge .knowledgeInfo {
-  width: 475px;
-  padding-top: 136px;
-}
+  .knowledgeInfo {
+    width: 475px;
+    padding-top: 136px;
 
-.knowledge .knowledgeInfo h1 {
-  font: 400 48px Dela Gothic One;
-  color: #000;
-  letter-spacing: -1.92px;
-}
+    & h1 {
+      font: 400 48px Dela Gothic One;
+      color: #000;
+      letter-spacing: -1.92px;
+    }
 
-.knowledge .knowledgeInfo p {
-  font: 600 18px Montserrat;
-  color: #757575;
-  line-height: 140%;
-  letter-spacing: -0.72px;
-  padding-top: 30px;
-}
+    & p {
+      font: 600 18px Montserrat;
+      color: #757575;
+      line-height: 140%;
+      letter-spacing: -0.72px;
+      padding-top: 30px;
+    }
 
-.knowledge .knowledgeInfo .btnKnowledge {
-  border-radius: 100px;
-  background-color: #c3dce3;
-  width: 131px;
-  padding: 14px 0;
-  color: #2b788b;
-  font: 700 16px Montserrat;
-  letter-spacing: -0.64px;
-  text-align: center;
-  margin-top: 34px;
-}
+    .btnKnowledge {
+      border-radius: 100px;
+      background-color: #c3dce3;
+      width: 131px;
+      padding: 14px 0;
+      color: #2b788b;
+      font: 700 16px Montserrat;
+      letter-spacing: -0.64px;
+      text-align: center;
+      margin-top: 34px;
 
-.knowledge .knowledgeInfo .btnKnowledge:hover {
-  transition: 0.5s;
-  opacity: 70%;
-}
+      &:hover {
+        transition: 0.5s;
+        opacity: 70%;
+      }
+    }
+  }
 
-.knowledge .knowledgeImg {
-  background-image: url(./assets/girlWithBooks.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 580px;
-  height: 474px;
-  margin-top: 26px;
+  .knowledgeImg {
+    background-image: url(./assets/girlWithBooks.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 580px;
+    height: 474px;
+    margin-top: 26px;
+  }
 }
 
 .progressWrapper {
   background-color: #fff;
-}
 
-.progressWrapper .progress {
-  width: 1220px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
+  .progress {
+    width: 1220px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
 
-.progressWrapper .progress .progressImg {
-  background-image: url(./assets/GuyAndGirl.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 680px;
-  height: 409px;
-  margin: 95px 0;
-}
+    .progressImg {
+      background-image: url(./assets/GuyAndGirl.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 680px;
+      height: 409px;
+      margin: 95px 0;
+    }
 
-.progressWrapper .progress .statistics {
-  padding-top: 149px;
-  width: 475px;
-}
+    .statistics {
+      padding-top: 149px;
+      width: 475px;
 
-.progressWrapper .progress .statistics h1 {
-  font: 400 48px Dela Gothic One;
-  color: #000;
-  letter-spacing: -1.92px;
-}
+      & h1 {
+        font: 400 48px Dela Gothic One;
+        color: #000;
+        letter-spacing: -1.92px;
+      }
 
-.progressWrapper .progress .statistics p {
-  font: 600 18px Montserrat;
-  color: #757575;
-  line-height: 140%;
-  letter-spacing: -0.72px;
-  padding-top: 30px;
-}
+      & p {
+        font: 600 18px Montserrat;
+        color: #757575;
+        line-height: 140%;
+        letter-spacing: -0.72px;
+        padding-top: 30px;
+      }
 
-.progressWrapper .progress .statistics .btnStatistics {
-  border-radius: 100px;
-  background-color: #c3dce3;
-  width: 129px;
-  padding: 14px 0;
-  color: #2b788b;
-  font: 700 16px Montserrat;
-  letter-spacing: -0.64px;
-  text-align: center;
-  margin-top: 34px;
-}
+      .btnStatistics {
+        border-radius: 100px;
+        background-color: #c3dce3;
+        width: 129px;
+        padding: 14px 0;
+        color: #2b788b;
+        font: 700 16px Montserrat;
+        letter-spacing: -0.64px;
+        text-align: center;
+        margin-top: 34px;
 
-.progressWrapper .progress .statistics .btnStatistics:hover {
-  transition: 0.5s;
-  opacity: 70%;
+        &:hover {
+          transition: 0.5s;
+          opacity: 70%;
+        }
+      }
+    }
+  }
 }

@@ -4,38 +4,37 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
 
-.wrapper .hschool a {
-  font: 400 16px Dela Gothic One;
-  color: #000;
-  border-right: 1.2px solid #e0e0e0;
-  padding-right: 28px;
+  .hschool a {
+    font: 400 16px Dela Gothic One;
+    color: #000;
+    border-right: 1.2px solid #e0e0e0;
+    padding-right: 28px;
+  }
 
-}
+  .btns {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
 
-.wrapper .btns {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
+  .login a {
+    font: 700 16px Montserrat;
+    color: #000;
+  }
 
-.wrapper .login a {
-  font: 700 16px Montserrat;
-  color: #000;
-}
+  .signUp {
+    font: 700 16px Montserrat;
+    background-color: #2b788b;
+    color: #fff;
+    border-radius: 14.188px;
+    padding: 13px 0;
+    width: 108px;
+    text-align: center;
 
-.wrapper .signUp {
-  font: 700 16px Montserrat;
-  background-color: #2b788b;
-  color: #fff;
-  border-radius: 14.188px;
-  padding: 13px 0;
-  width: 108px;
-  text-align: center;
-}
-
-.wrapper .signUp:hover {
-  transition: 0.5s;
-  opacity: 70%;
+    &:hover {
+      transition: 0.5s;
+      opacity: 70%;
+    }
+  }
 }

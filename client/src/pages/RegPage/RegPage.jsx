@@ -10,18 +10,11 @@ function RegPage() {
         <div className={style.loginForm}>
           <h1>Sign Up</h1>
 
-          <div>
-            <input type="text" placeholder="Name"></input>
-          </div>
-          <div>
-            <input type="text" placeholder="Surname"></input>
-          </div>
-          <div>
-            <input type="password" placeholder="Password"></input>
-          </div>
-          <div>
-            <input type="password" placeholder="Confirm Password"></input>
-          </div>
+          {["Name", "Surname", "Password", "Confirm Password"].map((el) => (
+            <div>
+              <input type="text" placeholder={el}></input>
+            </div>
+          ))}
 
           <div className={style.loginBtn}>Sign Up</div>
         </div>

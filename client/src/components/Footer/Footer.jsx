@@ -6,16 +6,15 @@ function Footer() {
       <div className={style.footerWrapper}>
         <div className={style.footerInfo}>
           <div className={style.footerInfoNav}>
-            <p>Home</p>
-            <p>Textbook</p>
-            <p>Statistics</p>
-            <p>Sprint</p>
+            {["Home", "Textbook", "Statistics", "Sprint"].map((el) => (
+              <p>{el}</p>
+            ))}
           </div>
 
           <div className={style.footerPeople}>
-            <p>Alex</p>
-            <p>Gabriel</p>
-            <p>Marcus</p>
+            {["Alex", "Gabriel", "Marcus"].map((el) => (
+              <p>{el}</p>
+            ))}
           </div>
         </div>
 

@@ -10,12 +10,11 @@ function LoginPage() {
         <div className={style.loginForm}>
           <h1>Login</h1>
 
-          <div>
-            <input type="text" placeholder="Login" />
-          </div>
-          <div>
-            <input type="password" placeholder="Password" />
-          </div>
+          {["Login", "Password"].map((el) => (
+            <div>
+              <input type="text" placeholder={el} />
+            </div>
+          ))}
 
           <div className={style.loginBtn}>Login</div>
         </div>

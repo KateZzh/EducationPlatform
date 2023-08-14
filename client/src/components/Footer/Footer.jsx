@@ -1,4 +1,6 @@
 import style from "./style.module.css";
+import Options from "./Options";
+import Icons from "./Icons";
 
 function Footer() {
   return (
@@ -6,15 +8,11 @@ function Footer() {
       <div className={style.footerWrapper}>
         <div className={style.footerInfo}>
           <div className={style.footerInfoNav}>
-            {["Home", "Textbook", "Statistics", "Sprint"].map((el) => (
-              <p>{el}</p>
-            ))}
+            <Options data={["Home", "Textbook", "Statistics", "Sprint"]} />
           </div>
 
           <div className={style.footerPeople}>
-            {["Alex", "Gabriel", "Marcus"].map((el) => (
-              <p>{el}</p>
-            ))}
+            <Options data={["Alex", "Gabriel", "Marcus"]} />
           </div>
         </div>
 
@@ -22,9 +20,7 @@ function Footer() {
 
         <div className={style.footerContacts}>
           <div className={style.footerLogo}>
-            <div className={style.gitLogo}></div>
-            <div className={style.gtLogo}></div>
-            <div className={style.youtubeLogo}></div>
+            <Icons data={["gitLogo", "gtLogo", "youtubeLogo"]} />
           </div>
 
           <p>©2021 Hschool. Project for Hschool.</p>

@@ -3,7 +3,6 @@
   margin: 118px auto 124px;
   display: flex;
   align-items: center;
-  background-color: #f6f5f4;
 
   .previewInfo {
     width: 500px;
@@ -102,6 +101,7 @@
 
 .learningWrapper {
   background-color: #fff;
+  width: 100%;
 
   .learning {
     width: 1220px;

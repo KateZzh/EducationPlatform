@@ -2,6 +2,7 @@ import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Input from "../../components/Input/Input";
 import style from "./style.module.css";
+import Button from "@mui/material/Button";
 
 function LoginPage() {
   const array = [
@@ -19,7 +20,9 @@ function LoginPage() {
 
           <Input data={array} />
 
-          <div className={style.loginBtn}>Login</div>
+          <Button className={style.loginBtn} variant="contained">
+            Login
+          </Button>
         </div>
 
         <div className={style.loginImg}></div>

@@ -3,9 +3,11 @@ import bodyParser from 'body-parser';
 import course from '../src/controller/course.controller';
 import user from '../src/controller/user.controller';
 import api from '../src/controller/api.controller';
+import cors from "cors"
 
 const app = express();
 
+app.use(cors())
 app.use(bodyParser.json());
 app.use('/course', course);
 app.use('/user', user);

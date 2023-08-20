@@ -1,12 +1,23 @@
 import React from "react";
-import TextField from '@mui/material/TextField';
+import TextField from "@mui/material/TextField";
 
-const Input = (props) => {
+const Input = ({ data, setInp, inp }) => {
+  function changeInp(event) {
+    setInp({...inp, [event.target.name]:event.target.value});
+  }
+
   return (
     <>
-      {props.data.map((el, index) => (
+      {data.map((el, index) => (
         <div key={index}>
-          <TextField label={el.text} variant="outlined" type={el.type} color="secondary" />
+          <TextField
+            name={el.text}
+            label={el.text}
+            variant="outlined"
+            type={el.type}
+            color="secondary"
+            onChange={changeInp}
+          />
         </div>
       ))}
     </>

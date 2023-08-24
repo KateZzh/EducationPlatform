@@ -5,13 +5,16 @@ import style from "./style.module.css";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
+  const navigate = useNavigate();
   const [inp, setInp] = useState({ email: "", pwd: "" });
 
   async function authorizationUser() {
     const request = await axios.post("http://localhost:3001/api/auth", inp);
     console.log(request.data);
+    navigate("/students")
   }
 
   const array = [

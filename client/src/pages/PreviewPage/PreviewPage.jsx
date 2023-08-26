@@ -5,7 +5,7 @@ import Footer from "../../components/Footer/Footer";
 function PreviewPage() {
   return (
     <div>
-      <Header />
+      <Header isAuth={false} />
       <PreviewInfo />
       <Footer />
     </div>

@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<PreviewPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="/singup" element={<RegPage />}></Route>
+        <Route path="/reg" element={<RegPage />}></Route>
         <Route path="/students" element={<StudentPage />}></Route>
       </Routes>
     </ThemeProvider>

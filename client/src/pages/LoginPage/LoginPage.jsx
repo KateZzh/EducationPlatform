@@ -14,7 +14,7 @@ function LoginPage() {
   async function authorizationUser() {
     const request = await axios.post("http://localhost:3001/api/auth", inp);
     console.log(request.data);
-    navigate("/students")
+    navigate("/students");
   }
 
   const array = [
@@ -24,7 +24,7 @@ function LoginPage() {
 
   return (
     <>
-      <Header />
+      <Header isAuth={false} />
 
       <div className={style.login}>
         <div className={style.loginForm}>

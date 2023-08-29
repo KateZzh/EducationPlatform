@@ -1,7 +1,7 @@
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Input from "../../components/Input/Input";
-import style from "./style.module.css";
+import style from "./regPage.module.css";
 import axios from "axios";
 import { useState } from "react";
 

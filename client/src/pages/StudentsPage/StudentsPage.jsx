@@ -1,7 +1,8 @@
 import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import style from "./style.module.css";
+import style from "./studentsPage.module.css";
+import Pagination from "@mui/material/Pagination";
 
 const StudentPage = () => {
   const arr = [
@@ -22,6 +23,7 @@ const StudentPage = () => {
   return (
     <div>
       <Header isAuth={true} />
+
       <div className={style.studentWrapper}>
         <div className={style.studentLogo}>
           <div className={style.studentLogoImg}></div>
@@ -31,13 +33,23 @@ const StudentPage = () => {
         {arr.map((el, index) => (
           <div className={style.courseWrapper} key={index}>
             <div className={style.courseImg}></div>
+
             <div className={style.courseLanguage}>
               <h1>{el.h1}</h1>
               <p>{el.p}</p>
             </div>
           </div>
         ))}
+
+        <Pagination
+          className={style.pagination}
+          count={10}
+          variant="outlined"
+          color="primary"
+          size="large"
+        />
       </div>
+
       <Footer />
     </div>
   );

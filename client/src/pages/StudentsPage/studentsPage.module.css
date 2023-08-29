@@ -4,6 +4,7 @@
   align-items: center;
   width: 1220px;
   margin: auto;
+  padding: 40px 0 100px;
 
   .studentLogo {
     display: flex;
@@ -68,5 +69,9 @@
         width: 516px;
       }
     }
+  }
+
+  .pagination {
+    padding-top: 40px;
   }
 }

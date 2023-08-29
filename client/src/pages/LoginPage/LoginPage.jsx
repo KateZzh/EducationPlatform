@@ -1,7 +1,7 @@
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Input from "../../components/Input/Input";
-import style from "./style.module.css";
+import style from "./loginPage.module.css";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import axios from "axios";

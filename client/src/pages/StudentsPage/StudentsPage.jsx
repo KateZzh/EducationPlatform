@@ -3,8 +3,11 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import style from "./studentsPage.module.css";
 import Pagination from "@mui/material/Pagination";
+import { useState } from "react";
 
 const StudentPage = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+
   const arr = [
     {
       h1: "JavaScript",
@@ -18,7 +21,34 @@ const StudentPage = () => {
       h1: "Python",
       p: "Students will learn about variables, data types, conditionals, loops, functions, and file handling. Through hands-on exercises and projects, students will gain proficiency in writing Python code and solving real-world problems.",
     },
+    {
+      h1: "test1",
+      p: "Students will learn about variables, data types, conditionals, loops, functions, and file handling. Through hands-on exercises and projects, students will gain proficiency in writing Python code and solving real-world problems.",
+    },
+    {
+      h1: "test2",
+      p: "Students will learn about variables, data types, conditionals, loops, functions, and file handling. Through hands-on exercises and projects, students will gain proficiency in writing Python code and solving real-world problems.",
+    },
+    {
+      h1: "test3",
+      p: "Students will learn about variables, data types, conditionals, loops, functions, and file handling. Through hands-on exercises and projects, students will gain proficiency in writing Python code and solving real-world problems.",
+    },
+    {
+      h1: "test4",
+      p: "Students will learn about variables, data types, conditionals, loops, functions, and file handling. Through hands-on exercises and projects, students will gain proficiency in writing Python code and solving real-world problems.",
+    },
+    {
+      h1: "test5",
+      p: "Students will learn about variables, data types, conditionals, loops, functions, and file handling. Through hands-on exercises and projects, students will gain proficiency in writing Python code and solving real-world problems.",
+    },
   ];
+
+  const recordsPerPage = 3;
+  const lastIndex = currentPage * recordsPerPage;
+  const firstIndex = lastIndex - recordsPerPage;
+  const records = arr.slice(firstIndex, lastIndex);
+  const npage = Math.ceil(arr.length / recordsPerPage);
+  const emptyRows = recordsPerPage - (arr.length % recordsPerPage);
 
   return (
     <div>
@@ -30,7 +60,7 @@ const StudentPage = () => {
           <h1>Courses</h1>
         </div>
 
-        {arr.map((el, index) => (
+        {records.map((el, index) => (
           <div className={style.courseWrapper} key={index}>
             <div className={style.courseImg}></div>
 
@@ -41,12 +71,17 @@ const StudentPage = () => {
           </div>
         ))}
 
+        {arr.length % recordsPerPage !== 0 && currentPage === npage ? (
+          <div style={{ height: 256 * emptyRows }}></div>
+        ) : null}
+
         <Pagination
           className={style.pagination}
-          count={10}
+          count={npage}
           variant="outlined"
           color="primary"
           size="large"
+          onChange={(e, p) => setCurrentPage(p)}
         />
       </div>
 

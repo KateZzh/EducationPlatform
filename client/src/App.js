@@ -6,6 +6,7 @@ import RegPage from "./pages/RegPage/RegPage";
 import StudentPage from "./pages/StudentsPage/StudentsPage";
 import { ThemeProvider } from "@mui/material/styles";
 import customTheme from "./Theme";
+import CoursePage from "./pages/CoursePage/CoursePage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/reg" element={<RegPage />}></Route>
         <Route path="/students" element={<StudentPage />}></Route>
+        <Route path="/course/:id" element={<CoursePage />}></Route>
       </Routes>
     </ThemeProvider>
   );

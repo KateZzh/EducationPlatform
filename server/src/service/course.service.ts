@@ -8,8 +8,8 @@ async function getUsers(): Promise<iCourse[]> {
   return data;
 }
 
-async function createCourse(course: string) {
-  const data = await createCourseDB(course);
+async function createCourse(course: string, description: string) {
+  const data = await createCourseDB(course, description);
   if (!data.length) throw new Error("this object doesn't create");
 
   return data;
@@ -22,8 +22,8 @@ async function getCourseById(id: number) {
   return data;
 }
 
-async function updateCourse(id: number, course: string) {
-  const data = await updateCourseDB(id, course);
+async function updateCourse(id: number, course: string, description: string) {
+  const data = await updateCourseDB(id, course, description);
   if (!data.length) throw new Error("course doesn't update");
 
   return data;

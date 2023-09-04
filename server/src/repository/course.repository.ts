@@ -37,7 +37,7 @@ async function updateCourseDB(id: number, course: string, description: string): 
   return data;
 }
 
-async function deleteCourseDB(id: number) {
+async function deleteCourseDB(id: number): Promise<iCourse[]> {
   const client = await pool.connect();
 
   const sql = 'delete from courses where id = $1 returning *';

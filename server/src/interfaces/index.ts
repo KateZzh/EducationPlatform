@@ -12,4 +12,10 @@ interface iUser {
   pwd: string;
 }
 
-export { iCourse, iUser };
+interface iLesson {
+  id: number;
+  course_id: number;
+  title: string;
+}
+
+export { iCourse, iUser, iLesson };

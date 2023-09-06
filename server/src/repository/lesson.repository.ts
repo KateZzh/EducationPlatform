@@ -48,7 +48,7 @@ async function deleteLessonDB(id: number): Promise<iLesson[]> {
 async function getLessonByIdDB(id: number): Promise<iLesson[]> {
   const client = await pool.connect();
 
-  const sql = 'select * from lessons where id = $1';
+  const sql = 'select * from lessons where course_id = $1';
   const data = (await client.query(sql, [id])).rows;
 
   await client.release()

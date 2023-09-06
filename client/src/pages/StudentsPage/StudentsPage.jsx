@@ -4,7 +4,6 @@ import Footer from "../../components/Footer/Footer";
 import style from "./studentsPage.module.css";
 import Pagination from "@mui/material/Pagination";
 import { useState, useEffect } from "react";
-// import array from "../../storage/course.json";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -12,21 +11,20 @@ const StudentPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [array, setArray] = useState([]);
 
-  useEffect(() => {
-    getAllCourses();
-  }, []);
-
   async function getAllCourses() {
     const res = await axios.get("http://localhost:3001/course/");
     setArray(res.data);
   }
+
+  useEffect(() => {
+    getAllCourses();
+  }, []);
 
   const recordsPerPage = 3;
   const lastIndex = currentPage * recordsPerPage;
   const firstIndex = lastIndex - recordsPerPage;
   const partArray = array.slice(firstIndex, lastIndex);
   const npage = Math.ceil(array.length / recordsPerPage);
-  // const emptyRows = recordsPerPage - (array.length % recordsPerPage);
 
   return (
     <div>
@@ -50,10 +48,6 @@ const StudentPage = () => {
             </div>
           </Link>
         ))}
-
-        {/* {array.length % recordsPerPage !== 0 && currentPage === npage ? (
-          <div style={{ height: 256 * emptyRows }}></div>
-        ) : null} */}
 
         <Pagination
           className={style.pagination}

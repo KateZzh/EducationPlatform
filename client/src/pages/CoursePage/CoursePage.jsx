@@ -4,21 +4,27 @@ import Footer from "../../components/Footer/Footer";
 import style from "./coursePage.module.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-// import array from "../../storage/course.json";
 
 const CoursePage = () => {
-  const [res, setRes] = useState([]);
+  const [res, setRes] = useState({});
+  const [les, setLes] = useState([]);
 
   const { id } = useParams();
-
-  useEffect(() => {
-    getByIdCourse();
-  }, []);
 
   async function getByIdCourse() {
     const res = await axios.get(`http://localhost:3001/course/${id}`);
     setRes(res.data[0]);
   }
+
+  async function getByIdLessons() {
+    const res = await axios.get(`http://localhost:3001/lesson/${id}`);
+    setLes(res.data);
+  }
+
+  useEffect(() => {
+    getByIdCourse();
+    getByIdLessons();
+  }, []);
 
   return (
     <div>
@@ -39,13 +45,11 @@ const CoursePage = () => {
         </div>
 
         <div className={style.wrapperRight}>
-          <h1>15 lessons</h1>
+          <h1>{les.length} lessons</h1>
 
-          <p>1. Test</p>
-          <p>1. Test</p>
-          <p>1. Test</p>
-          <p>1. Test</p>
-          <p>1. Test</p>
+          {les.map((el, index) => (
+            <p key={index}>{el.title}</p>
+          ))}
         </div>
       </div>
 

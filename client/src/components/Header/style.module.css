@@ -5,11 +5,12 @@
   justify-content: space-between;
   align-items: center;
 
-  .hschool a {
+  .hschool {
     font: 400 16px Dela Gothic One;
     color: #000;
     border-right: 1.2px solid #e0e0e0;
     padding-right: 28px;
+    cursor: pointer;
   }
 
   .btns {
@@ -36,5 +37,11 @@
       transition: 0.5s;
       opacity: 70%;
     }
+  }
+
+  .signOut {
+    font: 700 16px Montserrat;
+    color: #000;
+    cursor: pointer;
   }
 }

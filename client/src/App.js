@@ -1,24 +1,16 @@
-import "./App.css";
-import { Routes, Route } from "react-router-dom";
-import PreviewPage from "./pages/PreviewPage/PreviewPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
-import RegPage from "./pages/RegPage/RegPage";
-import StudentPage from "./pages/StudentsPage/StudentsPage";
+import RouteProvider from "../src/RouteProvider/RouteProvider";
+import useAuth from "./hooks/useAuth";
 import { ThemeProvider } from "@mui/material/styles";
 import customTheme from "./Theme";
-import CoursePage from "./pages/CoursePage/CoursePage";
+import AuthContext from "./context/context";
 
 function App() {
+  const data = useAuth();
+  const route = RouteProvider(!!data.token);
   return (
-    <ThemeProvider theme={customTheme}>
-      <Routes>
-        <Route path="/" element={<PreviewPage />}></Route>
-        <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="/reg" element={<RegPage />}></Route>
-        <Route path="/students" element={<StudentPage />}></Route>
-        <Route path="/course/:id" element={<CoursePage />}></Route>
-      </Routes>
-    </ThemeProvider>
+    <AuthContext.Provider value={data}>
+      <ThemeProvider theme={customTheme}>{route}</ThemeProvider>
+    </AuthContext.Provider>
   );
 }
 

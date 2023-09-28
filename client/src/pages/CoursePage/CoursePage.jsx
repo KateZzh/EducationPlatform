@@ -4,7 +4,6 @@ import Footer from "../../components/Footer/Footer";
 import style from "./coursePage.module.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-// import array from "../../storage/course.json";
 
 const CoursePage = () => {
   const [res, setRes] = useState([]);
@@ -22,7 +21,7 @@ const CoursePage = () => {
 
   return (
     <div>
-      <Header isAuth={true} />
+      <Header />
 
       <div className={style.wrapper}>
         <div className={style.wrapperLeft}>

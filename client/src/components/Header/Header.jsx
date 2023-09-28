@@ -1,15 +1,25 @@
 import style from "./style.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import AuthContext from "../../context/context";
 
-function Header({ isAuth }) {
+function Header() {
+  const { logOut, token } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  function back() {
+    logOut();
+    navigate("/");
+  }
+
   return (
     <div className={style.wrapper}>
-      <div className={style.hschool}>
-        <Link to={"/"}>Hschool</Link>
+      <div className={style.hschool} onClick={back}>
+        Hschool
       </div>
 
       <div className={style.btns}>
-        {!isAuth ? (
+        {!token ? (
           <>
             <div className={style.login}>
               <Link to={"/login"}>Login →</Link>
@@ -20,9 +30,9 @@ function Header({ isAuth }) {
             </Link>
           </>
         ) : (
-            <div className={style.login}>
-              <Link to={"/"}>Sign Out →</Link>
-            </div>
+          <div className={style.signOut} onClick={back}>
+            Sign Out →
+          </div>
         )}
       </div>
     </div>

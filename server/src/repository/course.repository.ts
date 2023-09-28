@@ -7,6 +7,8 @@ async function getUsersDB(): Promise<iCourse[]> {
   const sql = 'select * from courses';
   const data = (await client.query(sql)).rows;
 
+  client.release();
+
   return data;
 }
 
@@ -15,6 +17,8 @@ async function createCourseDB(course: string, description: string): Promise<iCou
 
   const sql = 'insert into courses (course, description) values ($1, $2) returning *';
   const data = (await client.query(sql, [course, description])).rows;
+
+  client.release();
 
   return data;
 }
@@ -25,6 +29,8 @@ async function getCourseByIdDB(id: number): Promise<iCourse[]> {
   const sql = 'select * from courses where id = $1';
   const data = (await client.query(sql, [id])).rows;
 
+  client.release();
+
   return data;
 }
 
@@ -34,6 +40,8 @@ async function updateCourseDB(id: number, course: string, description: string): 
   const sql = 'update courses set course = $1 description = $2 where id = $3 returning *';
   const data = (await client.query(sql, [course, description, id])).rows;
 
+  client.release();
+
   return data;
 }
 
@@ -42,6 +50,8 @@ async function deleteCourseDB(id: number): Promise<iCourse[]> {
 
   const sql = 'delete from courses where id = $1 returning *';
   const data = (await client.query(sql, [id])).rows;
+
+  client.release();
 
   return data;
 }

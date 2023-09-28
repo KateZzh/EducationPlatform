@@ -22,7 +22,7 @@ function RegPage() {
 
   return (
     <>
-      <Header isAuth={false} />
+      <Header />
 
       <div className={style.reg}>
         <div className={style.regForm}>

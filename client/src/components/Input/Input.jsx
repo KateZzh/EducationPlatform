@@ -3,7 +3,7 @@ import TextField from "@mui/material/TextField";
 
 const Input = ({ data, setInp, inp }) => {
   function changeInp(event) {
-    setInp({...inp, [event.target.name]:event.target.value});
+    setInp({ ...inp, [event.target.name]: event.target.value });
   }
 
   return (

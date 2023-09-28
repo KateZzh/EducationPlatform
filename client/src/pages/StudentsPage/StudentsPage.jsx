@@ -4,7 +4,6 @@ import Footer from "../../components/Footer/Footer";
 import style from "./studentsPage.module.css";
 import Pagination from "@mui/material/Pagination";
 import { useState, useEffect } from "react";
-// import array from "../../storage/course.json";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -30,7 +29,7 @@ const StudentPage = () => {
 
   return (
     <div>
-      <Header isAuth={true} />
+      <Header />
 
       <div className={style.studentWrapper}>
         <div className={style.studentLogo}>

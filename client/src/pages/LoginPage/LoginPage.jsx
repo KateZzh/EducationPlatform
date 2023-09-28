@@ -3,17 +3,21 @@ import Header from "../../components/Header/Header";
 import Input from "../../components/Input/Input";
 import style from "./loginPage.module.css";
 import Button from "@mui/material/Button";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import AuthContext from "../../context/context";
 
 function LoginPage() {
+  const { logIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const [inp, setInp] = useState({ email: "", pwd: "" });
 
   async function authorizationUser() {
-    const request = await axios.post("http://localhost:3001/api/auth", inp);
+    const request = await axios.post("http://localhost:3001/api/auth", inp, {withCredentials: true});
     console.log(request.data);
+    
+    logIn();
     navigate("/students");
   }
 
@@ -24,7 +28,7 @@ function LoginPage() {
 
   return (
     <>
-      <Header isAuth={false} />
+      <Header />
 
       <div className={style.login}>
         <div className={style.loginForm}>

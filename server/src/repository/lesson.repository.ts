@@ -12,7 +12,7 @@ async function getAllLessonDB(): Promise<iLesson[]> {
   return data;
 }
 
-async function createLessonDB(course_id: number, title: string): Promise<iLesson[]> {
+async function createLessonDB(course_id: string, title: string): Promise<iLesson[]> {
   const client = await pool.connect();
 
   const sql = 'insert into lessons (course_id, title) values ($1, $2) returning *';
@@ -23,7 +23,7 @@ async function createLessonDB(course_id: number, title: string): Promise<iLesson
   return data;
 }
 
-async function updateLessonDB(id: number, course_id: number, title: string): Promise<iLesson[]> {
+async function updateLessonDB(id: string, course_id: string, title: string): Promise<iLesson[]> {
   const client = await pool.connect();
 
   const sql = 'update lessons set course_id = $1, title = $2 where id = $3 returning *';
@@ -34,7 +34,7 @@ async function updateLessonDB(id: number, course_id: number, title: string): Pro
   return data;
 }
 
-async function deleteLessonDB(id: number): Promise<iLesson[]> {
+async function deleteLessonDB(id: string): Promise<iLesson[]> {
   const client = await pool.connect();
 
   const sql = 'delete from lessons where id = $1 returning *';
@@ -45,11 +45,11 @@ async function deleteLessonDB(id: number): Promise<iLesson[]> {
   return data;
 }
 
-async function getLessonByIdDB(id: number): Promise<iLesson[]> {
+async function getLessonByIdDB(course_id: string): Promise<iLesson[]> {
   const client = await pool.connect();
 
   const sql = 'select * from lessons where course_id = $1';
-  const data = (await client.query(sql, [id])).rows;
+  const data = (await client.query(sql, [course_id])).rows;
 
   client.release();
 

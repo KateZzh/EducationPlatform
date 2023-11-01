@@ -48,10 +48,10 @@ route.delete('/:id', async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-route.get('/:id', async (req: Request, res: Response): Promise<void> => {
+route.get('/:course_id', async (req: Request, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
-    const data = await getLessonById(id);
+    const { course_id } = req.params;
+    const data = await getLessonById(course_id);
 
     buildResponse(res, 200, data);
   } catch (error: any) {

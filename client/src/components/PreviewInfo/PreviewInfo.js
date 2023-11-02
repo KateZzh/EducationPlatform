@@ -1,15 +1,18 @@
-import style from "./style.module.css";
+import style from './style.module.css';
+import { Link } from 'react-router-dom';
 
 function PreviewInfo() {
   return (
     <>
       <div className={style.preview}>
         <div className={style.previewInfo}>
-          <p className={style.discription}>E-COURSE PLATFORM</p>
+          <p className={style.description}>E-COURSE PLATFORM</p>
           <h1>Learning and teaching online, made easy.</h1>
           <p className={style.info}>Any subject, in any language, on any device, for all ages!</p>
 
-          <div className={style.btnInfo}>About platform</div>
+          <Link to={'/*'}>
+            <div className={style.btnInfo}>About platform</div>
+          </Link>
 
           <div className={style.statistic}>
             <div className={style.statWrapper}>
@@ -47,7 +50,9 @@ function PreviewInfo() {
           <h1>Increase your knowledge</h1>
           <p>Traditional and new effective approaches to learning languages</p>
 
-          <div className={style.btnKnowledge}>Textbook →</div>
+          <Link to={'/*'}>
+            <div className={style.btnKnowledge}>Textbook →</div>
+          </Link>
         </div>
 
         <div className={style.knowledgeImg}></div>
@@ -61,7 +66,9 @@ function PreviewInfo() {
             <h1>Watch your progress every day</h1>
             <p>Save statistics on your achievements and mistakes</p>
 
-            <div className={style.btnStatistics}>Statistics →</div>
+            <Link to={'/*'}>
+              <div className={style.btnStatistics}>Statistics →</div>
+            </Link>
           </div>
         </div>
       </div>

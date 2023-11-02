@@ -8,9 +8,9 @@
 
     .footerInfoNav {
       display: flex;
+      gap: 30px;
 
       & p {
-        padding-right: 30px;
         color: #757575;
         font: 600 14px Montserrat;
       }
@@ -18,15 +18,11 @@
 
     .footerPeople {
       display: flex;
+      gap: 30px;
 
       & p {
-        padding-right: 30px;
         color: #757575;
         font: 600 14px Montserrat;
-
-        &:last-child {
-          padding-right: 0;
-        }
       }
     }
   }

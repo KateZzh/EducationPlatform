@@ -6,9 +6,7 @@ const route = express.Router();
 
 route.get('/', async (req: Request, res: Response): Promise<void> => {
   try {
-    const data = await getAllUsers();
-
-    buildResponse(res, 200, data);
+    buildResponse(res, 200, await getAllUsers());
   } catch (error: any) {
     buildResponse(res, 404, error.message);
   }
@@ -16,10 +14,7 @@ route.get('/', async (req: Request, res: Response): Promise<void> => {
 
 route.get('/:id', async (req: Request, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
-    const data = await getUserById(id);
-
-    buildResponse(res, 200, data);
+    buildResponse(res, 200, await getUserById(req.params.id));
   } catch (error: any) {
     buildResponse(res, 404, error.message);
   }
@@ -27,11 +22,9 @@ route.get('/:id', async (req: Request, res: Response): Promise<void> => {
 
 route.put('/:id', async (req: Request, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
     const { name, surname, email, pwd } = req.body;
-    const data = await updateUser(id, name, surname, email, pwd);
 
-    buildResponse(res, 200, data);
+    buildResponse(res, 200, await updateUser(req.params.id, name, surname, email, pwd));
   } catch (error: any) {
     buildResponse(res, 404, error.message);
   }
@@ -39,10 +32,7 @@ route.put('/:id', async (req: Request, res: Response): Promise<void> => {
 
 route.delete('/:id', async (req: Request, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
-    const data = await deleteUser(id);
-
-    buildResponse(res, 200, data);
+    buildResponse(res, 200, await deleteUser(req.params.id));
   } catch (error: any) {
     buildResponse(res, 404, error.message);
   }
@@ -51,9 +41,8 @@ route.delete('/:id', async (req: Request, res: Response): Promise<void> => {
 route.post('/', async (req: Request, res: Response): Promise<void> => {
   try {
     const { name, surname, email, pwd } = req.body;
-    const data = await createUserTest(name, surname, email, pwd);
 
-    buildResponse(res, 201, data);
+    buildResponse(res, 201, await createUserTest(name, surname, email, pwd));
   } catch (error: any) {
     buildResponse(res, 404, error.message);
   }

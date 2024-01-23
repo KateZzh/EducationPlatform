@@ -6,9 +6,7 @@ const route = express.Router();
 
 route.get('/', async (req: Request, res: Response): Promise<void> => {
   try {
-    const data = await getAllLesson();
-
-    buildResponse(res, 200, data);
+    buildResponse(res, 200, await getAllLesson());
   } catch (error: any) {
     buildResponse(res, 404, error.message);
   }
@@ -17,9 +15,8 @@ route.get('/', async (req: Request, res: Response): Promise<void> => {
 route.post('/', async (req: Request, res: Response): Promise<void> => {
   try {
     const { course_id, title } = req.body;
-    const data = await createLesson(course_id, title);
 
-    buildResponse(res, 200, data);
+    buildResponse(res, 200, await createLesson(course_id, title));
   } catch (error: any) {
     buildResponse(res, 404, error.message);
   }
@@ -27,11 +24,9 @@ route.post('/', async (req: Request, res: Response): Promise<void> => {
 
 route.put('/:id', async (req: Request, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
     const { course_id, title } = req.body;
-    const data = await updateLesson(id, course_id, title);
 
-    buildResponse(res, 200, data);
+    buildResponse(res, 200, await updateLesson(req.params.id, course_id, title));
   } catch (error: any) {
     buildResponse(res, 404, error.message);
   }
@@ -39,10 +34,7 @@ route.put('/:id', async (req: Request, res: Response): Promise<void> => {
 
 route.delete('/:id', async (req: Request, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
-    const data = await deleteLesson(id);
-
-    buildResponse(res, 200, data);
+    buildResponse(res, 200, await deleteLesson(req.params.id));
   } catch (error: any) {
     buildResponse(res, 404, error.message);
   }
@@ -50,10 +42,7 @@ route.delete('/:id', async (req: Request, res: Response): Promise<void> => {
 
 route.get('/:course_id', async (req: Request, res: Response): Promise<void> => {
   try {
-    const { course_id } = req.params;
-    const data = await getLessonById(course_id);
-
-    buildResponse(res, 200, data);
+    buildResponse(res, 200, await getLessonById(req.params.course_id));
   } catch (error: any) {
     buildResponse(res, 404, error.message);
   }
